@@ -1,0 +1,51 @@
+<%- include('header') %>
+<style>
+    .container-5{
+        width: 80%;
+        min-height: 100vh;
+        height: auto;
+     
+    }
+    .details{
+        padding: 10px 50px;
+        margin: 20px;
+    }
+    .details p{
+        padding: 5px;margin: 5px;
+    }
+    .conBtn{
+        padding: 10px 50px;
+        margin: 5px 20px;
+    }
+    .conBtn a{
+        padding: 10px ;
+        margin: 5px ;
+        text-decoration: none;
+    }
+    .conMsg{
+        padding: 10px 50px;
+        margin: 10px 20px;
+    }
+</style>
+<div class="container-5">
+    <h2 style="text-align:center; padding: 10px;"> Contact</h2>
+<div class="details">
+    <p>Name:- <%=contact.name%></p>
+    <p> Email:- <%=contact.email%></p>
+    <p> Date:- <%=contact.date%></p>
+</div>
+<div class="conBtn">
+    <a style="background-color:#C264FE;color:aliceblue;" href="">Delete</a> <a style="background-color:#FF731D;color:aliceblue;" href="">Reply</a>
+    <a style="background-color:blueviolet;color:aliceblue;" href="/my-dashboard/contact">Go Back</a>
+</div>
+<div class="conMsg">
+<p><%= contact.message%></p>
+</div>
+
+
+
+</div>
+
+
+
+<%- include('footer') %>

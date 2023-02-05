@@ -1,0 +1,49 @@
+<footer>
+    <div class="flogo">
+      <p> PSSG | 2023-copyright </p>
+      <p style="font-size:30px">
+      <a href=""> <i  class="bi bi-youtube"></i></a> 
+       <a href=""><i  class="bi bi-twitter"></i></a> 
+       <a href=""><i  class="bi bi-instagram"></i></a> 
+    </p>
+    </div>
+    <div class="links">
+        <ul>
+            <h3>Important Links</h3>
+             <li><a href="/developer">Developer</a></li>
+            <li><a href="">Gallary</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Contact us</a></li>
+            <li><a href="">Help & Support</a></li>
+        </ul>
+    </div>
+</footer>
+<script type="text/javascript">
+    const toggal = document.querySelector('.navl')
+    const navLikns = document.querySelector('.navlinks')
+    const toggal2 = document.querySelector('.navl2')
+
+    toggal.addEventListener('click',()=>{
+        navLikns.style.left = 0
+        toggal.style.display = 'none'
+        toggal2.style.display = 'block'
+    })
+    toggal2.addEventListener('click',()=>{
+        navLikns.style.left = "-100%"
+        toggal.style.display = 'block'
+        toggal2.style.display = 'none'
+    })
+</script>
+<script>
+    const errorr = document.querySelector('.error')
+    const info = document.querySelector('.info')
+    const remove = document.getElementById('removeFlash')
+    remove.addEventListener('click',()=>{    
+        info.style.display = 'none'
+    })
+    remove.addEventListener('click',()=>{
+        errorr.style.display = 'none'
+    })
+</script>
+</body>
+</html>

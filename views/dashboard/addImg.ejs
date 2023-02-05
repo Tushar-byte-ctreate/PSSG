@@ -1,0 +1,90 @@
+
+<%- include('header') %>
+<style>
+    .addimgDiv{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .addform{
+        width: 70%;
+        height: 50%;
+        display: flex; 
+    }
+    .addform img{
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    .addform form{
+        width: 300px;
+        height: 300px;
+        display: flex;
+        margin: 5px;
+        padding: 10px;
+        background-color: #ccc;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        color:blueviolet;
+    }
+    .addform form input{
+        width: 200px;
+        height: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .addform form button{
+        width: 80px;
+        height: 35px;
+        background-color: #FF731D;
+        color:aliceblue;
+        border: none;
+        cursor: pointer;
+    }
+    input:focus{
+        outline: none;
+    }
+</style>
+<div class=" blogs">
+
+<div class="addimgDiv">
+    <div class="addform">
+        <img id="imgPre" src="" alt="preview">
+        <form action="/my-dashboard/gallery/add/image" method="post">
+            <h3>Add Here</h3>
+            <input type="text" name="year" placeholder="Enter Year">
+            <input type="file" name="img" id="addImg" onchange="view()">
+            <input type="hidden" name="image" id="imgBinery" value="">
+            <button>Save</button>
+        </form>
+    </div>
+</div>
+</div>
+<script type="text/javascript" >
+    function readURL(res) {
+        if (res) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgBinery').attr('value', e.target.result);
+                $('#imgPre').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(res);
+        }
+    }
+    function view(){
+  const file = document.getElementById('addImg').files[0];
+  console.log(file);
+  imageConversion.compressAccurately(file,100).then(res=>{
+    //The res in the promise is a compressed Blob type (which can be treated as a File type) file;
+    console.log(res);
+    readURL(res)
+  })
+}
+            </script>
+<%- include('footer') %>

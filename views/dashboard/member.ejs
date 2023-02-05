@@ -1,0 +1,38 @@
+<%- include('header') %>
+
+<style>
+#tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tags a{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: deeppink;
+    color:blanchedalmond;
+}
+.bloglist a img {
+    width: 50px;
+}
+</style>
+<div class="blogs">
+   <div id="tags"  class=""><h1>Members</h1> <a href="/my-dashboard/create/member"> Create New<i class="bi bi-plus-square"></i></a></div> 
+    <div class="blogsP" >
+      
+        <% members.forEach(function(member){  %>
+            <div style=" height: 70px;"class="bloglist">
+                <a style="display: flex; justify-content: center; align-items: center;"href=""><img  src="<%=member.image%>" alt=""> <h4>  <%=member.name%></h4></a>  <div class="actionBtn"> <a href="/my-dashboard/member/<%=member._id%>"><i class="bi bi-eye"></i></a> 
+                     <a style="color:green;" href="/my-dashboard/member/edit/<%=member._id%>"><i class="bi bi-pencil-square"></i></a>
+                     <a style="color:red; " href="/my-dashboard/member/delete/<%=member._id%>"><i class="bi bi-trash"></i></a>
+                 </div>
+             </div>
+       <% }) %>
+       
+          </div>
+    </div>
+    
+</div>
+
+<%- include('footer') %>

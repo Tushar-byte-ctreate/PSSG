@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parshuram Sangharsh Samiti Gomat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+            </script>
+   <link rel="stylesheet" href="/dashCss/main.css">
+   <link rel="stylesheet" href="/dashCss/blog.css">
+   <script src="https://cdn.jsdelivr.net/gh/WangYuLue/image-conversion/build/conversion.js"></script>
+   <style id="cssFilter">
+    /* dynamically generated CSS will be put in here */
+  </style>
+</head>
+<body>
+    <% if(error == "" || error == null ){%>
+        <%}else{%>
+          <span class="error">
+            <p><%=error%></p> <i id="removeFlash" class="bi bi-x-lg"></i>
+          </span>
+        <%}%>
+        <% if(info == "" ||info == null){%>
+          <% }else{%>
+            <span class="info">
+                <p><%= info%> </p> <i   id="removeFlash" class="bi bi-x-lg"></i>
+              </span>
+        <%} %>
+    <nav>
+      <a style="text-decoration: none; color:#F8ECFD;" href="/my-dashboard"><h3>Dashboard</h3></a>  
+      <% if(!user){ %>
+        <div class="login">
+            <a href="/login">Login</a>
+        </div>
+   <% }else{ %>
+    <div class="login">
+        <a href="/logout">Logout</a>
+    </div>
+    <%}%>
+        
+    </nav>
+        <div class="container">
+            <div class="lists">
+                <i id="backForw" class="bi bi-arrow-right"></i>
+                     <i id="backFor" class="bi bi-arrow-left"></i>
+                <ul>
+                    <li><a href="/my-dashboard/user">Users</a> <i class="bi bi-people"></i></li>
+                    <li><a href="/my-dashboard/blogs">Blog</a><i class="bi bi-clipboard2-heart"></i></li>
+                    <li><a href="/my-dashboard/Gallery">Gallery</a>     <i class="bi bi-file-image"></i></li>
+                    <li><a href="/my-dashboard/member">Members</a><i class="bi bi-person-badge"></i></li>
+                    <li><a href="/my-dashboard/contact">Contact</a><i class="bi bi-person-badge"></i></li>
+                    <li><a href="/my-dashboard/Company">Company</a><i class="bi bi-building"></i></li>
+                    <li><a href="">Settings</a><i class="bi bi-gear"></i></li>
+                    <li><a href="/my-dashboard/donation">Donation</a> <i class="bi bi-currency-rupee"></i></li>
+                    <li><a href="">Help & Support</a> <i class="bi bi-info"></i></li>
+                </ul>
+            </div>
+       

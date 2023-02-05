@@ -1,0 +1,21 @@
+<%- include('header') %>
+
+
+<div class="blogs">
+    <h1>All Users Here</h1>
+    <div class="blogsP" >
+
+      <%  myUser.forEach(function(users){%>
+            <div class="bloglist">
+                <a href=""> <h4> <%= users.name%> </h4> <%= users.email%> </a>  <div class="actionBtn"> <a href="/user/profile/<%= users._id%>"><i class="bi bi-eye"></i></a> 
+                     <a style="color:green;" href="/my-dashboard/user/"><i class="bi bi-pencil-square"></i></a>
+                     <a style="color:red; " href="/my-dashboard/user/delete/<%= users._id%>"><i class="bi bi-trash"></i></a>
+                 </div>
+             </div>
+      <%  })%>
+   
+     </div>
+</div>
+
+
+<%- include('footer') %>

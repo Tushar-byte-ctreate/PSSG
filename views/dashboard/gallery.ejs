@@ -1,0 +1,62 @@
+<%- include('header') %>
+<style>
+    .imgCon{
+        position: relative;
+        width: 80%;
+        height: auto;
+    }
+    .imgDiv{
+        width: 100%;
+        height: auto;
+       
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        justify-content: center;
+        align-items: center;
+    }
+    .imgChild{
+        width: 300px;
+        height: 330px;
+        display: flex;
+        margin: 5px;
+        flex-direction: column;
+    }
+    .imgChild a{
+        text-align: center;
+        text-decoration: none;
+        background-color:#C264FE;
+        color:#FFFFFF;
+        padding: 10px;
+    }
+    .imgDiv img{
+       
+        width: 280px;
+        height: 300px;
+    }
+    .add{
+        margin: 10px;
+        padding: 10px;
+    }
+    .add a{
+        padding: 10px;
+       
+text-decoration: none;
+background-color: #FF731D;
+color: #fff;
+    }
+</style>
+<div class=" blogs">
+    <div class="add"> All Images
+<a href="/my-dashboard/gallery/add"> Add More <i class="bi bi-plus-square"></i></a>
+    </div>
+    <div class="imgDiv">
+       <% gallerys.forEach(function(img){%>
+            <div class="imgChild">
+                <img src="<%= img.image%>" alt="">
+                <a href="/my-dashboard/gallery/delete/<%=img._id%>">Delete <%= img.year%></a>
+            </div>
+       <% }) %>
+    </div>
+</div>
+
+<%- include('footer') %>

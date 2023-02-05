@@ -1,0 +1,16 @@
+
+<%- include('../header') %>
+<div class="blog">
+    <% blogs.forEach(function(blog){ %>
+        <div class="childBlog">
+            <div class="imgBlog">
+                <img src="<%=blog.image%>" alt="">
+            </div>
+            <div class="titleBlogs">
+                <a href="/blog/<%=blog.slugTitle%>"><h3><%=blog.title%></h3></a> 
+                <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+   <% }) %>
+    </div>
+    <%- include('../footer') %>

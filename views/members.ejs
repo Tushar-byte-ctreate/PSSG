@@ -1,0 +1,17 @@
+
+
+<%- include('header') %>
+<div class="members1">
+
+    <% members.forEach(function(member){%>
+        <div class="member">
+            <img src="<%= member.image%>" alt="avatar" class="avtar">
+            <h4><%= member.position%></h4>
+            <h2><a href="/member/<%=member._id%>"><%=member.name%></a></h2>
+        </div>
+  <%  })%>
+</div>
+
+
+
+<%- include('footer') %>

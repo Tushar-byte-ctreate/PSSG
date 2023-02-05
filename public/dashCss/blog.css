@@ -1,0 +1,33 @@
+.blogs{
+    width: 80%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.blogsP{
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bloglist{
+    width: 90%;
+    height: 50px;
+    background:#C264FE;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+.bloglist a{
+    padding: 10px;
+    text-decoration: none;
+    color:#F8ECFD;
+margin: 10px;
+}

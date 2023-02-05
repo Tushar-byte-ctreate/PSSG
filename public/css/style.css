@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+/* font .links */
+
+.error{
+    width: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    background:red;
+    position:absolute;
+    top: 100px;
+    right:0px;
+    z-index: 5;
+    border-radius:10px 0 0 10px ;
+}
+.error p ,#removeFlash{
+    padding: 10px;
+    cursor: pointer;
+}
+.info{
+    width: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    background:rgb(4, 141, 4);
+    position:absolute;
+    top: 100px;
+    right:0px;
+    z-index: 5;
+    color: #fff;
+    border-radius:10px 0 0 10px ;
+}
+.info p ,#removeFlash{
+    padding: 10px;
+    cursor: pointer;
+}
+/* nav links */
+nav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position:sticky;
+    top:0;
+    background-color:#FFF7E9;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px, rgba(0, 0, 0, 0.22) 0px 0px 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    color:#FF731D;
+}
+.navl2{
+    display:none;
+}
+
+.navlinks{
+    margin: 10px;
+}
+.navlinks ul li{
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+}
+.navlinks ul li a{
+    text-decoration: none;
+    color:#FF731D;
+    
+}
+.navlinks ul li a:hover{
+    color:#5F9DF7;
+}
+
+.login{
+    text-decoration: none;
+    padding:  10px 15px;
+    margin: 10px;
+    background-color: #FF731D;
+    color:#FFF7E9;
+    border-radius: 10px;
+}
+.login:hover{
+    background-color: #5F9DF7;
+    color: #1746A2;
+}
+
+/* container */
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+}
+.imgDiv{
+width: 50%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items:center;
+}
+.imgDiv img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: #FF731D 5px solid;
+}
+.name{
+    width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center;
+}
+.name h1
+{
+    padding: 20px;
+    margin: 10px;
+    font-size: 50px;
+    word-spacing: 5px;
+    
+}
+.name p{
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    word-spacing: 5px;
+}
+.explor{
+    padding: 10px;
+    margin: 10px 15px ;
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF731D;
+    border-radius: 5px;
+
+}
+.explor:hover{
+    background-color: #5F9DF7;
+    color: #1746A2;
+}
+/* event */
+.events{
+    width: 100%;
+    height: 70vh;
+    background-image: url(../images/event.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.eventEdd{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    color: #fff;
+}
+.eventEdd h1{
+    padding: 10px;
+    margin: 10px;
+    font-size: 50px;
+}
+.eventEdd h3{
+    padding: 10px;
+    margin: 10px;
+    font-size: 25px;
+}
+.eventEdd p{
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px
+}
+.enquary{
+    text-decoration: none;
+    background-color: #1746A2;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius:5px;
+    color:#fff;
+}
+.enquary:hover{
+    background-color: #FF731D;
+    color: #fff;
+}
+.members{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.members h2{
+    padding: 10px;
+    margin: 10px;
+}
+.profile{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.profile img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 3px solid #FF731D;
+}
+.profile h4{
+    padding: 5px;
+    font-size: 20px;
+}
+.wraperP{
+    display: flex;
+    flex-direction: row;
+}
+.viewMore{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #1746A2;
+    color:#FFF7E9;
+    border-radius: 5px;
+}
+.viewMore:hover{
+    background-color: #FF731D;
+    color: #fff;
+}
+
+/* donate */
+.donate{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://img.freepik.com/free-photo/closeup-diverse-people-joining-their-hands_53876-96081.jpg?w=900&t=st=1673261169~exp=1673261769~hmac=6aed353a832dcdc4efbaf4cae32000a1ae1bc730333847a93127b8da1408e792);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+}
+.donate h4{
+padding: 10px;
+height: 10px;
+font-size: 40px;
+color: #fff;
+}
+.donate h5{
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+.donate p img{
+    width: 50px;
+}
+/* footer/] */
+footer{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.flogo{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    color:#1746A2;
+}
+.flogo img{
+    width: 50px;
+}
+.flogo p{
+    padding: 10px;
+    margin: 10px;
+}
+.links{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.links ul li {
+    padding: 5px;
+    list-style: none;
+}
+.links ul li a{
+    text-decoration: none;
+    color:#1746A2;
+}
+.navl{
+    display: none;
+}
+
+
+@media (max-width:  980px) {
+    nav{
+        width: 100%;
+    }
+    .navl{
+        display: block;
+        padding: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all, 0.5s;
+    }
+    .navl2{
+        display:none;
+        padding: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all, 0.5s;
+    }
+    .navlinks{
+        position: absolute;
+        top:60px;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background-color: #FF731D;
+        color:#fff;
+        transition: all, 0.5s;
+        margin: 0;
+        left:-100%;
+    }
+    .navlinks ul{
+     display:flex;
+     flex-direction: column;
+     color: #fff;
+     justify-content: center;
+     align-items: center;
+     transition: all, 0.5s;
+    }
+    .navlinks ul li{
+        padding: 10px;
+    }
+    .navlinks ul li a{
+        color: #fff;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .imgDiv{
+        width: 100%;
+        height: 50%;
+    }
+    .imgDiv img{
+        width: 250px;
+        height: 250px;                                  
+    }
+    .name{
+        width: 100%;
+        height: 50%;
+    }
+    .name h1{
+        font-size:30px;
+        padding: 5px;
+        margin: 5px;
+    }
+    .name p{
+        font-size: 20px;
+        margin: 5px;padding: 5px;
+    }
+    .eventEdd {
+        text-align: center;
+    }
+    .eventEdd h1{
+        padding: 5px;
+        margin: 5px;
+    }
+    .eventEdd h3{
+        padding:0 10px;margin: 0px;
+    }
+    .donate{
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+    }
+    .donate h4{
+        padding: 20px;
+        margin: 20px;
+        font-size:30px;
+
+    }
+    footer{
+        height: auto;
+        text-align: center;
+        flex-direction:column-reverse;
+    }
+    .links{
+        padding: 5px;
+    }
+    .flogo{
+        font-size: 20px;
+        width: 100%;
+        flex-direction:column-reverse;
+    }
+    .flogo img{
+        width: 30px;
+    }
+}
+
+/* contact us  */
+
+.contact{
+    width: 95%;
+    height: 85vh;
+    background-color: #FF731D;
+    color:#fff;
+    border-radius: 25px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.contact form {
+    width: 400px;
+    height: 400px;
+    background-color: #1746A2;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.contact form input {
+    width: 300px;
+    height: 35px;
+  margin: 5px;
+}
+.contact form textarea {
+    width: 300px;
+}
+textarea:focus{
+    outline:none;
+}
+input:focus{
+    outline:none;
+}
+.contact form button{
+    width: 80px;
+    height: 35px;
+    background-color: #FF731D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+@media (max-width:  980px){
+    .contact form{
+        width: 320px;
+        height: 380px;
+    }
+}
+
+
+/* members profile */
+
+.members1{
+    width: 100%;
+    min-height:100vh;
+    height: auto;
+    display:grid;
+    
+    grid-template-columns: auto auto auto;
+    grid-auto-flow: row;
+    justify-content:center;
+    align-items:center;
+    }
+    .member{
+        width: 350px;
+        height: 400px;
+        display:flex;
+        margin: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: #6C00FF 1px solid;
+    }
+    .member img{
+        width: 300px;
+        height: 300px;
+    }
+    .member h4{
+       
+        margin: 5px;
+    }
+    @media (max-width:  980px){
+        .members1{
+            display:flex;
+            flex-direction:column;
+        }
+    }
+
+    /* member profile */
+    .singleM{
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .memberP{
+        width: 80%;
+        height: auto; 
+        padding: 20px;
+         min-height: 100vh;
+    
+    }
+    .imgSD{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .imgSD img{
+        width: 1000px;
+        height: 500px;
+    }
+    .memberP h2{
+        font-size: 40px;
+        padding: 10px;
+        margin: 10px 17px;
+    }
+    .memberP p{
+        padding: 10px;
+        margin: 20px;
+    }
+    @media (max-width:  980px){
+        .memberP{
+           width: 100%;
+        }
+        .imgSD img{
+            width: 300px;
+        }
+        .memberP h2{
+            padding: 10px;
+            margin: 10px 10px;
+            font-size: 20px;
+        }
+        .memberP p{
+            padding: 10px;
+            margin: 10px;
+        }
+    }

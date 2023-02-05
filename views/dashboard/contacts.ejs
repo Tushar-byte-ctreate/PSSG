@@ -1,0 +1,30 @@
+<%- include('header') %>
+
+
+<div class="blogs">
+
+    <div id="tags"  class=""><h1>Contacts</h1></div>
+
+   <% contactus.forEach(function(contact) {%>
+        <div class="bloglist">
+            <a href="/my-dashboard/contact/<%=contact._id%>"> <h4> <%= contact.name%></h4></a>  <div class="actionBtn"> 
+               <% if(contact.status == 'new'){ %>
+                    <a style="color:red;" href=""> <%=contact.status%></a>
+               <% }else{%>
+                    <a style="color:blueviolet;" href=""> <%= contact.status%></a>
+                 <% }%>
+                 <a href=""><i class="bi bi-eye"></i></a> 
+                
+                 <a style="color:green;" href=""><i class="bi bi-reply"></i></a>
+                 <a style="color:red; " href="/my-dashboard/contact/delete/<%=contact.id%>"><i class="bi bi-trash"></i></a>
+             </div>
+        </div>
+   <% })%>
+    
+
+
+    
+</div>
+
+
+<%- include('footer') %>

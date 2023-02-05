@@ -1,0 +1,21 @@
+
+<%- include('header') %>
+
+
+<div class="container">
+
+    <div class="contact">
+           <form action="/contect/us" method="POST" id=''  height="500px">
+            <h3>Contect Us</h3>
+            <p>All fields are required</p>
+            <input type="text" name="name" id="name" placeholder="Name"required />
+            <input type="email" name="email" id="email" placeholder="Email"required />
+            <textarea style=" height: 100px; margin: 5px; border-radius: 5px; border: 2px solid #40348f" type="text" name="message" id="" placeholder="Enter your message here ..."required ></textarea>
+              <p style="margin-bottom:10px ;display: flex; justify-content:center ;align-items: center;"> <input style="width: 20px;" type="checkbox" name="checkBox" id="" required> you agreed with  <a style="padding: 5px; text-decoration: none;color:#FF731D;" href="/">  term and condition</a></p>
+            
+            <button type="submit" >Send</button>
+        </form>
+       </div>
+    </div>
+    
+    <%- include('footer') %>

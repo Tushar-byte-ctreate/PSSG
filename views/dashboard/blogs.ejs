@@ -1,0 +1,35 @@
+<%- include('header') %>
+
+<style>
+#tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tags a{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: deeppink;
+    color:blanchedalmond;
+}
+</style>
+<div class="blogs">
+   <div id="tags"  class=""><h1>Blogs</h1> <a href="/my-dashboard/create/blog"> Create New<i class="bi bi-plus-square"></i></a></div> 
+    <div class="blogsP" >
+      
+        <% blogs.forEach(function(blog){  %>
+            <div class="bloglist">
+                <a href=""> <h4> <%=blog.title%></h4></a>  <div class="actionBtn"> <a href="/my-dashboard/blog/<%=blog._id%>"><i class="bi bi-eye"></i></a> 
+                     <a style="color:green;" href="/my-dashboard/blog/edit/<%=blog._id%>"><i class="bi bi-pencil-square"></i></a>
+                     <a style="color:red; " href="/my-dashboard/blogs/delete/<%=blog._id%>"><i class="bi bi-trash"></i></a>
+                 </div>
+             </div>
+       <% }) %>
+       
+          </div>
+    </div>
+    
+</div>
+
+<%- include('footer') %>

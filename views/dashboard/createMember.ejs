@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>compose Blog</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+        <!-- CSS only -->
+        <link rel="stylesheet" href="/dashCss/main.css">
+        <link rel="stylesheet" href="/dashCss/createBlog.css">
+ 
+        <!-- images compresser -->
+        <script src="https://cdn.jsdelivr.net/gh/WangYuLue/image-conversion/build/conversion.js"></script>
+         <!-- summarnote cdn -->
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <!-- google font -->
+
+<style>
+    @media (max-width : 980px) {
+        .container-9 form #btn-post{
+          
+            top: -10px;
+            right: 10px;
+        }
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> 
+    </head>
+    <body>
+        <nav>
+            <a style="text-decoration: none; color:#F8ECFD;" href="/my-dashboard"><h3>Dashboard</h3></a>  
+              <div class="login">
+                  <a href="/login">Login</a>
+              </div>
+          </nav>
+<div class="container-9">
+
+
+  <%  if(!idData){%>
+        <h2>Create Member Here</h2>
+        <hr>
+     <form action="/my-dashboard/member/craete/" method='post'>
+       <input type="text" name="name" id="" placeholder="Enter Name"/>
+       <input type="text" name="position" id="" placeholder="Enter Position"/>
+       <input  type="text" name="discription" id="dics" placeholder="Enter Description"/>
+       <input type='file' name="img" id="imgInp"  onchange="view()"/>
+       <input type="hidden" id="blah" name="image" value="">
+       <hr>
+     
+       <button id='btn-post' type="submit">Save</button>
+       <textarea name='about' id="body" rows="10" ></textarea>
+     </form>
+  <%  }else{%>
+        <h2>Create Edit Here</h2>
+        <hr>
+     <form action="/my-dashboard/member/edit/<%=idData._id%>" method='post'>
+       <input type="text" name="name" id="" value="<%=idData.name%>" placeholder="Enter Name"/>
+       <input type="text" name="position" value="<%=idData.position%>" id="" placeholder="Enter Position"/>
+       <input  type="text" value="<%=idData.description%>" name="discription" id="dics" placeholder="Enter Description"/>
+       <input type='file' name="img" id="imgInp"  onchange="view()"/>
+       <input type="hidden" id="blah" name="image" value="<%=idData.image%>">
+       <input type="hidden" id="value" name="value" value="<%=idData.about%>">
+       <hr>
+     
+       <button id='btn-post' type="submit">Save</button>
+       <textarea name='about' id="body" rows="10" ></textarea>
+     </form>
+     </div>
+   <% }%>
+
+<!-- summernote js -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script>
+    function view(){
+  const file = document.getElementById('imgInp').files[0];
+  console.log(file);
+  imageConversion.compressAccurately(file,100).then(res=>{
+    //The res in the promise is a compressed Blob type (which can be treated as a File type) file;
+    console.log(res);
+    readURL(res)
+  })
+}
+
+function readURL(res) {
+        if (res) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                console.log(e.target.result);
+                $('#blah').attr('value', e.target.result);
+            }
+            reader.readAsDataURL(res);
+        }
+    }
+</script>
+    <script>
+        $(document).ready(function() {
+            $('textarea#body').summernote({
+               height: '600px', 
+            });
+            var value = $('#value').val()
+            $('textarea#body').summernote('pasteHTML', value);
+            $('textarea#body').summernote({
+  dialogsInBody: true
+});
+        });
+        $('#summernote').summernote({
+  dialogsInBody: true
+});
+        </script>
+        <script>
+            $(document).ready(function() {
+                var  htmleditor = document.querySelector
+                var value = $('#hideinput').val()
+                console.log(value)
+                $('#htmleditor').val(value)
+            })
+            
+            </script>
+
+<%- include('footer'); -%>

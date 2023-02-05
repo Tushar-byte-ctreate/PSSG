@@ -1,0 +1,16 @@
+<% if(error == "" || error == null ){%>
+
+    <%}else{%>
+      <span class="error">
+        <p><%=error%></p> <i id="removeFlash" class="fas fa-times"></i>
+      </span>
+    <%}%>
+    <% if(info == "" ||info == null){%>
+        
+       
+      <% }else{%>
+        <span class="info">
+            <p><%= info%> </p> <i   id="removeFlash" class="fas fa-times"></i>
+          </span>
+        
+    <%} %>

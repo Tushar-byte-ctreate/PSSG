@@ -1,0 +1,127 @@
+<%- include('header') %>
+
+ <!-- user profile -->
+ <div class="userP">
+    <div class="userImg">
+        <% if(!user.img){%>
+            <img src="https://th.bing.com/th/id/OIP.wRtvON_8JKRQghdROw5QvQHaHa?pid=ImgDet&rs=1" alt="">
+        <%}else { %>
+            <img src="<%=user.img%>" alt="">
+        <% } %>
+       
+        <h2><%=user.name%></h2>
+        <div> <button id="editImg"> Edit Image</button> <button id="editName">Edit Name</button> <button id="editPass"> Change Password</button></div>
+    </div>
+    <hr>
+    <div class="userOther">
+        <h4>Donation</h4>
+        <div class="donationD">
+            <p> <i class="bi bi-currency-rupee"></i> 100</p>
+            <p> Date : 15/1/2022</p>
+        </div>  <div class="donationD">
+            <p> <i class="bi bi-currency-rupee"></i> 100</p>
+            <p> Date : 15/1/2022</p>
+        </div>  <div class="donationD">
+            <p> <i class="bi bi-currency-rupee"></i> 100</p>
+            <p> Date : 15/1/2022</p>
+        </div>  
+    </div>
+   </div>
+<!-- <--images change form --> 
+<div class="imgform">
+  <div class="imgPrew">
+    <img id="blah" src="https://th.bing.com/th/id/OIP.wRtvON_8JKRQghdROw5QvQHaHa?pid=ImgDet&rs=1" alt="your image" />
+  </div>
+  <form  id="rmci" action="/remove/images/<%= user.id%>" method="post">
+<button type="submit"> Remove Currunt Image</button>
+  </form>
+    <form id="form1" action="/edit/images/<%= user.id%>" method="post" runat="server">
+        <input type="hidden" id="imgData" name="imgData" value="">
+        <input type='file' name="img" id="imgInp"  onchange="view()"/>
+       <p><button  id type="submit">Save</button> <span id="hideThis">Cancel</span></p> 
+     </form>
+</div>
+  <!-- <--Name change form -->
+  <div class="changeNAme">  
+
+    <form  id="" action="/change/name/<%= user.id%>" method="post">
+        <h3>Change your Name here</h3>
+        <input type="text" name="name" placeholder="Enter Your Name">
+        <p><button id="changeN" type="submit">Save</button> <span id="nameThis">Cancel</span></p>
+    </form>
+  </div>
+  <!-- <--Password change form -->
+  <div class="changePass">
+    <form  id="" action="/change/password/<%=user.id%>" method="post">
+        <h3>Change Your Password Here</h3>
+        <input type="password" name="password" placeholder="Enter password">
+        <input type="text" name="cPass" placeholder="Enter confirmed password">
+        <p><button id="changeP" type="submit">Save</button> <span id="passThis">Cancel</span></p>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+
+    //edit images js 
+    const editImg = document.querySelector('#editImg')
+    const imgform = document.querySelector('.imgform')
+    const hide = document.querySelector('#hideThis')
+    editImg.addEventListener('click',()=>{
+        console.log('dajdhj')
+        imgform.style.visibility="visible"
+    })
+    hide.addEventListener('click',()=>{
+        imgform.style.visibility="hidden"
+    })
+
+// edit the name query
+const editName = document.querySelector('#editName')
+    const nform = document.querySelector('.changeNAme')
+    const hideName = document.querySelector('#nameThis')
+
+    editName.addEventListener('click',()=>{
+
+        console.log('dajdhj')
+        nform.style.display="block"
+    })
+    hideName.addEventListener('click',()=>{
+        nform.style.display="none"
+    })
+//password Cahnge
+const editPass = document.querySelector('#editPass')
+    const pform = document.querySelector('.changePass')
+    const hidePass = document.querySelector('#passThis')
+
+    editPass.addEventListener('click',()=>{
+
+        
+        pform.style.display="block"
+    })
+    hidePass.addEventListener('click',()=>{
+        pform.style.display="none"
+    })
+
+</script>
+   <script type="text/javascript" >
+    function readURL(res) {
+        if (res) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgData').attr('value', e.target.result);
+                $('#blah').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(res);
+        }
+    }
+    
+    function view(){
+  const file = document.getElementById('imgInp').files[0];
+  console.log(file);
+  imageConversion.compressAccurately(file,100).then(res=>{
+    //The res in the promise is a compressed Blob type (which can be treated as a File type) file;
+    console.log(res);
+    readURL(res)
+  })
+}
+            </script>
+<%- include('footer') %>

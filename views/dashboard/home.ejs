@@ -1,0 +1,119 @@
+<%- include('header') %>
+
+<div class="grapgBox">
+    <div  class="graphBoxs">
+      <canvas id="myChart"></canvas>
+    </div>
+    <div class="graphBoxs">
+      <canvas id="myChartBarf"></canvas>
+    </div>
+    <div class="graphBoxs">
+      <canvas id="myChartBar"></canvas>
+    </div>
+    <div class="graphBoxs">
+      <canvas id="myChartBars"></canvas>
+    </div>
+</div>
+<div class="contactBox">
+    <h3>Contact Information</h3>
+    <% contact.forEach((contact) =>{%>
+      <a href=""><div class="contactLins">
+        <h4><%= contact.name%></h4> <h5>Subject</h5> <h6> <%=contact.status%></h6>
+        </div></a> 
+    <%})%>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  <script>
+    
+    const ctxi = document.getElementById('myChartBarf');
+  
+    new Chart(ctxi, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+    <script>
+    
+      const ctxis = document.getElementById('myChartBar');
+    
+      new Chart(ctxis, {
+        type: 'polarArea',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+      <script>
+    
+        const ctxif = document.getElementById('myChartBars');
+      
+        new Chart(ctxif, {
+          type: 'radar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+<%- include('footer') %>

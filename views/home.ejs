@@ -1,0 +1,58 @@
+<%- include('header') %>
+
+
+<div class="container">
+    <div class="imgDiv">
+        <img src="https://img.freepik.com/free-vector/hand-drawn-parshuram-jayanti-background_23-2149341222.jpg?w=740&t=st=1673259905~exp=1673260505~hmac=a381c3b9a299d2f70a62368d4ce17b3f9a44994a64617505c86f38c727ebd3b0" alt="">
+    </div>
+    <div class="name">
+        <h1>Parshuram Sangharsh <br> Samiti Gomat</h1>
+        <p> "दुनिया को हिला देने की शक्ति
+<br>
+            आपके भीतर है
+<br>
+            एक बार परशुराम बनने की देरी है।" </p>
+            <a class="explor" href="">Explor ></a>
+    </div>
+</div>
+<div class="events">
+
+<div class="eventEdd">
+<h1>Upcomming Event on <br>
+22 April 2023 </h1>
+<h3> Parshuram Sangharsh Samiti Gomat</h3>
+<p>  Gomat , Khair (Aligarh) <br> pin-(202135) </p>
+<a class="enquary" href="/">Enquary</a>
+</div>
+</div>
+ 
+<div class="members">
+    <h2> Our Members & Founders </h2>
+    <marquee> 
+    <div class="wraperP"> 
+   <% members.forEach(function(member){%>
+    <div class="profile">
+        <img src="<%=member.image%>" alt="">
+        <h4> <%=member.name%></h4>
+        <p><%=member.position%> </p>
+    </div>
+  <% })%>
+    
+
+
+
+</div>
+</marquee>
+    <a class="viewMore" href='/members'> View More</a>
+</div>
+<div class="donate">
+    
+    <h4>Help Us with Your Contribution </h4>
+    <h5>:) :) :)</h5>
+    <p> <img src="https://img.icons8.com/color/512/paytm.png" alt="">
+        <img src="https://img.icons8.com/color/512/google-pay-india.png" alt="">
+        <img src="https://img.icons8.com/color/512/phone-pe.png" alt="">
+        <img src="https://img.icons8.com/color/512/bhim.png" alt="">
+    </p>
+</div>
+<%- include('footer') %>
