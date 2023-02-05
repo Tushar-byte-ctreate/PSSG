@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const User = require('../../model/user')
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const cookie = require('cookie-parser');
 const { v4: uuidv4 } = require('uuid');
