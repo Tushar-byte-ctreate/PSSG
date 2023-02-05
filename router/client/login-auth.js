@@ -5,8 +5,7 @@ var jwt = require('jsonwebtoken');
 const cookie = require('cookie-parser');
 const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer')
-const cookieParser = require('cookie-session');
-var flash = require('connect-flash');
+
 
 
 // router.use(cookieParser({

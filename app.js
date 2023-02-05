@@ -22,7 +22,7 @@ dotenv.config();
 
 //   app.use(cookieParser('keyboard cat'));
 app.use(session({
-    secret:"klshdlhsd",
+    secret:process.env.SESSION_SECRET,
     secure:"true",
     resave:true,
     saveUninitialized:true,
