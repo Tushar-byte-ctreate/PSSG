@@ -97,7 +97,7 @@ router.get('/reset/auth/:uid',(req,res)=>{
   
       req.flash('info',"Password has been update successfully")
       console.log('password has been update"')
-      res.redirect('back')}
+      res.redirect('/login')}
     }else{
   
     req.flash('error',"Password dose not macthed")
