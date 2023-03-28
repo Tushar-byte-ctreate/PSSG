@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+         *{
+            font-family: 'Roboto', sans-serif;
+         }
+         .error{
+        width: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        background:red;
+        position:absolute;
+        top: 100px;
+        right:0px;
+        z-index: 5;
+        border-radius:10px 0 0 10px ;
+    }
+    .error p ,#removeFlash{
+        padding: 10px;
+        cursor: pointer;
+    }
+    .info{
+        width: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        background:rgb(4, 141, 4);
+        position:absolute;
+        top: 100px;
+        right:0px;
+        z-index: 5;
+        color: #fff;
+        border-radius:10px 0 0 10px ;
+    }
+    .info p ,#removeFlash{
+        padding: 10px;
+        cursor: pointer;
+    }
+      </style>
+</head>
+<body>
+    <div class="container-6">
+    <% if(error == "" || error == null ){%>
+
+        <%}else{%>
+          <span class="error">
+            <p><%=error%></p> <i id="removeFlash" class="bi bi-x-lg"></i>
+          </span>
+        <%}%>
+        <% if(info == "" ||info == null){%>
+            
+           
+          <% }else{%>
+            <span class="info">
+                <p><%= info%> </p> <i   id="removeFlash" class="bi bi-x-lg"></i>
+              </span>
+        <%} %>
+
+
+        <div class="login">
+     
+            <form action="/password/email/auth" method="post" id='login'>
+                <h3>Enter Your Email</h3>
+                <input type="email" name="email" placeholder="Username" required />
+                
+               <p> <button type="submit" name="login">Send</button> </p> 
+            
+            </form>
+
+    </div>
+    
+</body>
+</html>
+
+
+
+

@@ -25,8 +25,7 @@ app.use(session({
     secret:process.env.EMAIL_USER,
     secure:"true",
     resave:true,
-    saveUninitialized:true,
-    
+    saveUninitialized:true, 
 }))
     app.use(flash());
     app.use(cookieParser())

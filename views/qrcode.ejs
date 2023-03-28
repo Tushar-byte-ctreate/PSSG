@@ -1,0 +1,32 @@
+<%- include('header') %>
+<style>
+    .container-qr{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+#qrcode{
+    width: 500px;
+}
+@media (max-width:  980px){
+    #qrcode{
+        width: 250px;
+    }
+}
+</style>
+<div class="container-qr">
+    <img id="qrcode"  src="/images/qrcode.png" alt="donation qr code">
+
+    <h2>How to Pay </h2>
+    <ul>
+        <li >First Scan the QR code and it will redirect to payment option like phonePe , Paytm ,Google Pay etc.</li>
+        <li>
+             
+        </li>
+
+    </ul>
+</div>
+<%- include('footer') %>
